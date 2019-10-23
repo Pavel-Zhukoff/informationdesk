@@ -9,7 +9,4 @@ public class DeskApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(DeskApplication.class, args);
 	}
-
-
-
 }
