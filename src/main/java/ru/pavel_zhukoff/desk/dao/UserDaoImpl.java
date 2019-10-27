@@ -21,4 +21,37 @@ public class UserDaoImpl implements UserDao {
         String sql = "SELECT * FROM user";
         return jdbcTemplate.query(sql, new UserMapper());
     }
+
+    @Override
+    public User findById(int userId) {
+        String sql = "SELECT * FROM user WHERE user_id = ?";
+        return jdbcTemplate.queryForObject(sql, new UserMapper(), userId);
+    }
+
+    @Override
+    public void deleteById(int userId) {
+        String sql = "DELETE FROM user FROM user_id = ?";
+        jdbcTemplate.update(sql, userId);
+    }
+
+    @Override
+    public void save(User user) {
+        String sql = "INSERT INTO user (username, email, password, register_date)" +
+                " VALUES (?, ?, ?, ?)";
+        jdbcTemplate.update(sql,
+                user.getUsername(),
+                user.getEmail(),
+                user.getPassword(),
+                user.getDate());
+    }
+
+    @Override
+    public void update(User user) {
+        String sql = "UPDATE user SET username = ?, email = ?, password = ?, register_date = ?";
+        jdbcTemplate.update(sql,
+                user.getUsername(),
+                user.getEmail(),
+                user.getPassword(),
+                user.getDate());
+    }
 }

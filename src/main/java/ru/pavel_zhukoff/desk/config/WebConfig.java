@@ -5,7 +5,9 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer;
 import org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver;
 
 
@@ -27,4 +29,16 @@ public class WebConfig implements WebMvcConfigurer {
         return freeMarkerViewResolver;
     }
 
+    @Bean
+    public FreeMarkerConfigurer getFreeMarkerConfigurer() {
+        FreeMarkerConfigurer freeMarkerConfigurer = new FreeMarkerConfigurer();
+        freeMarkerConfigurer.setTemplateLoaderPath("classpath:/templates/pages/");
+        return freeMarkerConfigurer;
+    }
+
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/style/**")
+                .addResourceLocations("classpath:/static/css/").setCachePeriod(17480);
+    }
 }

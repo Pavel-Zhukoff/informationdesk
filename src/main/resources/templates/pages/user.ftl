@@ -8,6 +8,9 @@
     <title>Document</title>
 </head>
 <body>
-<h1>Hello, World!</h1>
+<h1>User ${user.username}</h1>
+<h2>ID: ${user.userId}</h2>
+<h2>Email: ${user.email}</h2>
+<h2>Register date: ${user.date}</h2>
 </body>
 </html>
