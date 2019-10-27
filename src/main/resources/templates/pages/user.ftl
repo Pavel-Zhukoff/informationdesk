@@ -1,12 +1,6 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
+<#import "components/head.ftl" as head/>
+<@head.head title="Пользователь ${user.getUsername()}"/>
+
 <body>
 <h1>User ${user.username}</h1>
 <h2>ID: ${user.userId}</h2>

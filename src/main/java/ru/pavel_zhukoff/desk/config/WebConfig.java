@@ -26,6 +26,7 @@ public class WebConfig implements WebMvcConfigurer {
         freeMarkerViewResolver.setOrder(1);
         freeMarkerViewResolver.setSuffix(".ftl");
         freeMarkerViewResolver.setPrefix("");
+        freeMarkerViewResolver.setContentType("text/html; charset=UTF-8");
         return freeMarkerViewResolver;
     }
 

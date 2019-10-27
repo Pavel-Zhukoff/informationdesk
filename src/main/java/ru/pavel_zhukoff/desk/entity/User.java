@@ -56,6 +56,7 @@ public class User {
     }
 
     public Date getDate() {
+        System.out.println(date);
         return date;
     }
 
