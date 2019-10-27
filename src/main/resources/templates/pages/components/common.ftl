@@ -1,6 +1,6 @@
 <#macro head title="">
     <!doctype html>
-    <html lang="en">
+    <html lang="en" xmlns="http://www.w3.org/1999/html">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport"
@@ -10,4 +10,10 @@
 
         <link rel="stylesheet" href="/style/style.css">
     </head>
+    <body>
+</#macro>
+
+<#macro footer>
+    </body>
+    </html>
 </#macro>

@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import ru.pavel_zhukoff.desk.entity.User;
+import ru.pavel_zhukoff.desk.service.DeskService;
 import ru.pavel_zhukoff.desk.service.UserService;
 
 @Controller
@@ -14,9 +15,12 @@ public class DeskController {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private DeskService deskService;
+
     @RequestMapping("/")
     public String index(Model model) {
-        model.addAttribute("users", userService.findAll());
+  
         return "index";
     }
 

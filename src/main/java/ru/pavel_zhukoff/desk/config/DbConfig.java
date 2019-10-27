@@ -6,13 +6,14 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import ru.pavel_zhukoff.desk.dao.DeskDao;
+import ru.pavel_zhukoff.desk.dao.DeskDaoImpl;
 import ru.pavel_zhukoff.desk.dao.UserDao;
 import ru.pavel_zhukoff.desk.dao.UserDaoImpl;
 
 import javax.sql.DataSource;
 
 @Configuration
-@ComponentScan(basePackages = "ru.pavel_zhukoff.desk.service")
 public class DbConfig {
 
     @Bean
@@ -33,5 +34,10 @@ public class DbConfig {
     @Bean
     public UserDao getUserDao() {
         return new UserDaoImpl(getJdbcTemplate());
+    }
+
+    @Bean
+    public DeskDao getDeskDao() {
+        return new DeskDaoImpl(getJdbcTemplate());
     }
 }
