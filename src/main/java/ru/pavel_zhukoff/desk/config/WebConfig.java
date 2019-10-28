@@ -33,7 +33,7 @@ public class WebConfig implements WebMvcConfigurer {
     @Bean
     public FreeMarkerConfigurer getFreeMarkerConfigurer() {
         FreeMarkerConfigurer freeMarkerConfigurer = new FreeMarkerConfigurer();
-        freeMarkerConfigurer.setTemplateLoaderPath("classpath:/templates/pages/");
+        freeMarkerConfigurer.setTemplateLoaderPath("classpath:/templates/");
         return freeMarkerConfigurer;
     }
 

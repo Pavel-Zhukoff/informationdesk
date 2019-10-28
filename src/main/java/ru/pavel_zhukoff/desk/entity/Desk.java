@@ -26,6 +26,9 @@ public class Desk {
 
     private int author;
 
+
+    private User authorUser;
+
     public int getDeskId() {
         return deskId;
     }
@@ -66,4 +69,11 @@ public class Desk {
         this.author = author;
     }
 
+    public User getAuthorUser() {
+        return authorUser;
+    }
+
+    public void setAuthorUser(User authorUser) {
+        this.authorUser = authorUser;
+    }
 }

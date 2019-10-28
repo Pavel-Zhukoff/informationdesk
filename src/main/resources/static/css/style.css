@@ -3,4 +3,58 @@
 }
 body {
     font-family: Verdana, serif;
+    line-height: 1.1;
+}
+
+h1,h2,h3,h4,h5,h6,p,a {
+    padding: 0;
+    margin: 0;
+}
+
+.wrapper {
+    width: 80%;
+    margin: 0 auto;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0;
+}
+
+.menu {
+    display: flex;
+}
+
+.menu::before {
+    content: '[';
+    margin-right: .5rem;
+}
+
+.menu::after {
+    content: ']';
+    margin-left: .5rem;
+}
+
+.menu .menu-item {
+    margin: 0 .5rem;
+    display: flex;
+}
+
+@media screen and (max-width: 1024px) {
+    .wrapper {
+        width: 85%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .wrapper {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    .wrapper {
+        width: 95%;
+    }
 }
