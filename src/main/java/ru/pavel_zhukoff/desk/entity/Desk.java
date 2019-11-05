@@ -26,7 +26,6 @@ public class Desk {
 
     private int author;
 
-
     private User authorUser;
 
     public int getDeskId() {

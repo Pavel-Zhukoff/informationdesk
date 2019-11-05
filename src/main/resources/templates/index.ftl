@@ -28,7 +28,9 @@
             <div class="section-content">
                 <#if (users)??>
                     <#list users as user>
-                        <@userComponent.topAuthorsList author=user />
+                        <#if user.pubCount gt 0 >
+                            <@userComponent.topAuthorsList author=user />
+                        </#if>
                     </#list>
                     <#else>
                     <p>

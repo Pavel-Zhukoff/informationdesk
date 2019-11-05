@@ -6,6 +6,8 @@ import ru.pavel_zhukoff.desk.entity.Desk;
 import ru.pavel_zhukoff.desk.entity.User;
 import ru.pavel_zhukoff.desk.mapper.DeskMapper;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 public class DeskDaoImpl implements DeskDao {
@@ -61,5 +63,21 @@ public class DeskDaoImpl implements DeskDao {
                 desk.getTitle(),
                 desk.getText(),
                 desk.getDeskId());
+    }
+
+    @Override
+    public List<Desk> findByDateSince(Date date) {
+        SimpleDateFormat dt = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");
+        String sql = "SELECT * FROM desk " +
+                "WHERE creation_date > ?";
+        return jdbcTemplate.query(sql, new DeskMapper(), dt.format(date));
+    }
+
+    @Override
+    public List<Desk> findByDateTo(Date date) {
+        SimpleDateFormat dt = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");
+        String sql = "SELECT * FROM desk " +
+                "WHERE creation_date < ?";
+        return jdbcTemplate.query(sql, new DeskMapper(), dt.format(date));
     }
 }

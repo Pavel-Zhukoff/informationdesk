@@ -3,6 +3,7 @@ package ru.pavel_zhukoff.desk.dao;
 import ru.pavel_zhukoff.desk.entity.Desk;
 import ru.pavel_zhukoff.desk.entity.User;
 
+import java.util.Date;
 import java.util.List;
 
 public interface DeskDao {
@@ -17,4 +18,8 @@ public interface DeskDao {
     void save(Desk desk);
 
     void update(Desk desk);
+
+    List<Desk> findByDateSince(Date date);
+
+    List<Desk> findByDateTo(Date date);
 }

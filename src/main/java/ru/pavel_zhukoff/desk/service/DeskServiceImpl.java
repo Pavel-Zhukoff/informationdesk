@@ -6,6 +6,7 @@ import ru.pavel_zhukoff.desk.dao.DeskDao;
 import ru.pavel_zhukoff.desk.entity.Desk;
 import ru.pavel_zhukoff.desk.entity.User;
 
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -42,5 +43,15 @@ public class DeskServiceImpl implements DeskService {
     @Override
     public void update(Desk desk) {
         deskDao.update(desk);
+    }
+
+    @Override
+    public List<Desk> findByDateSince(Date date) {
+        return deskDao.findByDateSince(date);
+    }
+
+    @Override
+    public List<Desk> findByDateTo(Date date) {
+        return deskDao.findByDateTo(date);
     }
 }

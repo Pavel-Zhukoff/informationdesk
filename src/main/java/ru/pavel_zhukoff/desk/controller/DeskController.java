@@ -9,10 +9,7 @@ import ru.pavel_zhukoff.desk.entity.User;
 import ru.pavel_zhukoff.desk.service.DeskService;
 import ru.pavel_zhukoff.desk.service.UserService;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 @Controller
 @RequestMapping("/")
@@ -26,20 +23,25 @@ public class DeskController {
 
     @RequestMapping("/")
     public String index(Model model) {
-        List<Desk> desks = deskService.findAll();
         List<User> users = userService.findAll();
-        List<HashMap<String, String>> authors = new ArrayList<>();
-        HashMap<Integer, Integer> pubs = new HashMap<>();
+        GregorianCalendar calendar = new GregorianCalendar();
+        calendar.add(Calendar.MONTH, -1);
+        List<Desk> desks = deskService.findByDateSince(calendar.getTime());
+        List<HashMap<String, Object>> authors = new ArrayList<>();
         for (Desk desk: desks) {
             desk.setAuthorUser(userService.findById(desk.getAuthor()));
         }
         for (User user: users) {
-            HashMap<String, String> author = new HashMap<>();
-            author.put("id", String.valueOf(user.getUserId()));
+            HashMap<String, Object> author = new HashMap<>();
+            author.put("id", user.getUserId());
             author.put("username", user.getUsername());
             author.put("email", user.getEmail());
-            author.put("register", String.valueOf(user.getDate()));
-            author.put("pubCount", String.valueOf(deskService.findAllByUser(user).size()));
+            author.put("register", user.getDate());
+            int count = 0;
+            for (Desk desk: desks) {
+                if (desk.getAuthor() == user.getUserId()) count++;
+            }
+            author.put("pubCount", count);
             authors.add(author);
         }
         model.addAttribute("desks", desks);

@@ -1,7 +1,7 @@
 <#macro item info>
     <div>
-        <h3>${info.getTitle()}</h3>
-        <p>${info.getText()}</p>
-        <p><small>Дата публикации: ${info.getCreationDate()} | Автор: ${info.getAuthorUser().getUsername()}</small></p>
+        <h3>${info.title}</h3>
+        <p>${info.text}</p>
+        <p><small>Дата публикации: ${info.creationDate} | Автор: ${info.authorUser.username}</small></p>
     </div>
 </#macro>

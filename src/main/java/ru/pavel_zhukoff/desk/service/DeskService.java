@@ -3,6 +3,7 @@ package ru.pavel_zhukoff.desk.service;
 import ru.pavel_zhukoff.desk.entity.Desk;
 import ru.pavel_zhukoff.desk.entity.User;
 
+import java.util.Date;
 import java.util.List;
 
 public interface DeskService {
@@ -17,4 +18,8 @@ public interface DeskService {
     void save(Desk desk);
 
     void update(Desk desk);
+
+    List<Desk> findByDateSince(Date date);
+
+    List<Desk> findByDateTo(Date date);
 }
