@@ -95,6 +95,32 @@ header {
 .top-author-list {
     width: calc(100% * 5 / 13 - 1rem);
 }
+
+.top-author-list .top-author-list__item {
+    position: relative;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+.top-author-list .top-author-list__item:first-of-type {
+    margin-top: 0;
+}
+
+.top-author-list .top-author-list__item:not(:last-of-type):after {
+    content: '';
+    position: absolute;
+    width: 60%;
+    height: 2px;
+    background-color: #000;
+    bottom: -1rem;
+    left: 20%;
+}
+
+.login-form {
+    width: 50%;
+    margin: 0 auto;
+}
+
 @media screen and (max-width: 1024px) {
     .wrapper {
         width: 85%;

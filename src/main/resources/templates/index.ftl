@@ -1,6 +1,7 @@
 <#import "components/common.ftl" as common/>
 <#import "components/desk.ftl" as deskComponent/>
 <#import "components/user.ftl" as userComponent/>
+<#import "components/forms.ftl" as formComponent/>
 <@common.head title="Главная"/>
 <@common.header/>
     <h1 class="page-title">
@@ -26,20 +27,19 @@
         <div class="section top-author-list">
             <h2 class="section-title">Топ авторов месяца</h2>
             <div class="section-content">
-                <#if (users)??>
-                    <#list users as user>
+                <#list users>
+                    <#items as user>
                         <#if user.pubCount gt 0 >
                             <@userComponent.topAuthorsList author=user />
                         </#if>
-                    </#list>
+                    </#items>
                     <#else>
                     <p>
                         Пусто!
                     </p>
-                </#if>
+                </#list>
             </div>
         </div>
     </div>
-
 
 <@common.footer />

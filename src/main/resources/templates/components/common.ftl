@@ -29,9 +29,9 @@
 
                 <#else>
                 <div class="menu">
-                    <a href="#" class="menu-item">Вход</a>
+                    <a href="/user/enter" class="menu-item">Вход</a>
                     <span>|</span>
-                    <a href="#" class="menu-item">Регистрация</a>
+                    <a href="/user/register" class="menu-item">Регистрация</a>
                 </div>
             </#if>
         </div>
