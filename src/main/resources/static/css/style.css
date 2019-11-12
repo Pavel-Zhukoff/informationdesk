@@ -121,6 +121,96 @@ header {
     margin: 0 auto;
 }
 
+.form {
+    border-style: solid;
+    border-color: #000;
+    padding: 1rem;
+}
+
+.form .form-title {
+    font-size: 1.25rem;
+}
+
+.form-group {
+    display: block;
+    margin-bottom: .5rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+}
+
+.form-group .form-label,
+.form-group .form-input,
+.form-group .form-select {
+    display: block;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.form-group .form-label {
+    margin-bottom: .25rem;
+}
+
+.form-group .form-label.checkbox-label {
+    display: inline-block;
+    width: calc(100% - 1rem);
+}
+
+.form-group .form-label .required-field {
+    color: #ff0101;
+    font-size: .75rem;
+    cursor: pointer;
+}
+
+.form-group .form-input,
+.form-group .form-select {
+    padding: .25rem .1rem;
+}
+
+.form-group .form-input.form-error,
+.form-group .form-select.form-error {
+    border-color: #ff0101;
+    border-style: solid;
+}
+
+.form-group .form-input:focus,
+.form-group .form-select:focus {
+    outline-color: #000;
+    border-color: transparent;
+}
+
+.form-group .form-checkbox {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    color: #000;
+}
+
+.form-group .form-error-message {
+    color: #ee0101;
+    font-size: .75rem;
+    font-weight: bold;
+    margin-top: .25rem;
+}
+
+.button-default {
+    appearance: none;
+    border: 2px solid #000;
+    background-color: #000;
+    color: #fff;
+    font-size: 1.25rem;
+    transition: background-color linear .3s, color linear .3s;
+    padding: .25rem .5rem;
+}
+
+.button-default:hover,
+.button-default:focus {
+    background-color: transparent;
+    color: #000;
+    text-decoration: none;
+    outline: 0;
+}
+
 @media screen and (max-width: 1024px) {
     .wrapper {
         width: 85%;

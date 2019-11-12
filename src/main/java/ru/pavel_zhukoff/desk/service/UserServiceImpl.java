@@ -31,7 +31,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void save(User user) {
-        user.setDate(new Date());
         userDao.save(user);
     }
 
